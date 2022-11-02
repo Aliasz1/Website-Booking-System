@@ -1,4 +1,4 @@
-function BookForm(){
+const BookForm = () => {
     return(
         <>
         <div class='grid grid-cols-1 mx-auto bg-white text-center shadow-xl py-5 w-2/5 rounded'>

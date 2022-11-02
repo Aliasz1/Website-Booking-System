@@ -1,23 +1,30 @@
 import React from "react";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Blog from "./components/Blog";
-import Profile from "./components/Profile";
-import Carousel from "./components/Carousel";
-import BookForm from "./components/BookForm";
+import Contact from "./pages/Contact";
+import Info from "./pages/Info";
+import Home from "./pages/Home";
+import Layout from "./pages/Layout";
+import NoPage from "./pages/NoPage";
+import Login from "./pages/Login";
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+const App = () => {
   return (
     <>
-      <div className="bg-cyan space-y-8 tracking-wide">
-        <Header />
-        <Profile />
-        <Carousel />
-        <BookForm />
-        <Blog />
-        <Footer />
-      </div>
+    <div className="bg-cyan space-y-8 tracking-wide">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="Info" element={<Info />} />
+            <Route path="Contact" element={<Contact />} />
+            <Route path="Login" element={<Login />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
     </>
 
     

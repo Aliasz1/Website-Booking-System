@@ -1,4 +1,4 @@
-function Blog() {
+const Blog = () => {
     return(
         <>
             <div className='grid grid-cols-3 gap-5 px-5 font-sans'>

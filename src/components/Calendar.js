@@ -1,0 +1,12 @@
+const Calendar = () => {
+    return(
+        <>
+            <div className="flex justify-center">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%234285F4&ctz=Asia%2FBrunei&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&src=cmszbWJzcTA0cWpwc2Ntc25lcjlpMHVpcDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23C0CA33" 
+                width="800" height="600" frameborder="0" scrolling="no" title="Calendar"></iframe>
+            </div>
+        </>
+    )
+}
+
+export default Calendar;

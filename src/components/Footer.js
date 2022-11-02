@@ -1,4 +1,6 @@
-function Footer(){
+import { Link } from 'react-router-dom';
+
+const Footer = () => {
 
     return(
         <>
@@ -17,9 +19,9 @@ function Footer(){
                     <p>Navigation</p>
                     <br />
                     <ul className='list-none flex flex-col space-y-2 font-sans'>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Info</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/Info">Info</Link></li>
+                        <li><Link to="/Contact">Contact</Link></li>
                     </ul>
                 </div>
                 <div>
