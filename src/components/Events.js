@@ -6,9 +6,9 @@ import { Pagination } from "swiper";
 const Events = () => {
     return(
         <>
-            <div className="text-center">
-                <h1>Events:</h1>
-                <Swiper pagination={true} modules={[Pagination]} className="mySwiper max-h-lg max-w-lg rounded-lg shadow-lg">
+            <div className="text-center mx-auto max-w-lg shadow-lg">
+                <h1 className="bg-dark-gray rounded-t-lg text-white">Events:</h1>
+                <Swiper pagination={true} modules={[Pagination]} className="mySwiper max-h-lg max-w-lg rounded-b-lg">
                     <SwiperSlide>
                         <div className='w-full grid justify-items-center'>
                             <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhumanhist.com%2Fwp-content%2Fuploads%2F2019%2F01%2Feducation.jpg&f=1&nofb=1&ipt=28e628892e54a784d79b28f91997b51725cd99549dbdaa2e1f9af50bb713db6f&ipo=images' alt="Event 1"/>

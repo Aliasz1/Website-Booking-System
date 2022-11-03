@@ -40,7 +40,7 @@ module.exports = {
       'sienna': '#EE6C4D',
       'cyan': '#e0fbfc',
       'darkest-gray': '#293241',
-      'dark-gray': '#16302c',
+      'dark-gray': '#111847',
 
     },
     fontFamily: {

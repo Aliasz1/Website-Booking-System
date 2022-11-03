@@ -4,7 +4,7 @@ const Header = () => {
 
     return(
         <>
-        <div className='tracking-wide sticky top-0 z-30 px-10 bg-dark-gray py-10 grid grid-cols-2 text-white'>
+        <div className='tracking-wide sticky top-0 z-30 px-10 bg-dark-gray py-10 grid grid-cols-2 text-white font-serif'>
             <Link to="/">UBD COUNSELING</Link>
             <nav>
                 <ul className='list-none flex flex-row justify-end space-x-5 font-sans '>
