@@ -39,7 +39,8 @@ module.exports = {
       'white': '#FFFFFF',
       'sienna': '#EE6C4D',
       'cyan': '#e0fbfc',
-      'dark-gray': '#293241',
+      'darkest-gray': '#293241',
+      'dark-gray': '#16302c',
 
     },
     fontFamily: {
@@ -53,7 +54,6 @@ module.exports = {
       DEFAULT: '4px',
       'md': '0.375rem',
       'lg': '0.5rem',
-      'carousel': '0.8rem',
       'full': '9999px',
       'large': '12px',
     },

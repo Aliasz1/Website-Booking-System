@@ -6,9 +6,10 @@ const Login = () => {
                     <h1 className="my-8 text-center text-2xl">Login</h1>
                     <form className="space-y-5">
                         <div><label>User ID</label></div>
-                        <div><input type="text" name="uid" /></div>
+                        <div><input type="text" name="uid" className="rounded"/></div>
                         <div><label>Password</label></div>
-                        <div><input type="password" name="pass" /></div>
+                        <div><input type="password" name="pass" className="rounded"/></div>
+                        <br />
                         <input type="submit" value="Submit" className="rounded border py-2 px-5" />
                     </form>
                 </div>

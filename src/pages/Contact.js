@@ -1,9 +1,18 @@
 import BookForm from "../components/BookForm";
+import ContactForm from "../components/ContactForm";
+import Calendar from "../components/Calendar";
 
 const Contact = () => {
     return(
         <>
-            <BookForm />
+            <div>
+                <Calendar />
+            </div>
+            <div className="grid grid-cols-2">
+                <ContactForm />
+                <BookForm />
+            </div>
+
         </>
     )
   };

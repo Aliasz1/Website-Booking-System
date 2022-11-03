@@ -1,7 +1,7 @@
 import React from "react";
 
 import Contact from "./pages/Contact";
-import Info from "./pages/Info";
+import About from "./pages/About";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage";
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="Info" element={<Info />} />
+            <Route path="About" element={<About />} />
             <Route path="Contact" element={<Contact />} />
             <Route path="Login" element={<Login />} />
             <Route path="*" element={<NoPage />} />

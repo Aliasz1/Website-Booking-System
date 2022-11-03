@@ -20,7 +20,7 @@ const Footer = () => {
                     <br />
                     <ul className='list-none flex flex-col space-y-2 font-sans'>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/Info">Info</Link></li>
+                        <li><Link to="/About">About</Link></li>
                         <li><Link to="/Contact">Contact</Link></li>
                     </ul>
                 </div>
