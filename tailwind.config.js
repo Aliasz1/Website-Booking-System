@@ -31,21 +31,22 @@ module.exports = {
       'pink': '#ff49db',
       'orange': '#ff7849',
       'green': '#08531A',
-      'lightgreen': '#00800B',
       'yellow': '#DFD746',
       'gray': '#8492a6',
-      'gray-light': '#d3dce6',
       'black': '#292929',
-      'white': '#FFFFFF',
-      'sienna': '#EE6C4D',
-      'cyan': '#e0fbfc',
-      'darkest-gray': '#293241',
-      'dark-gray': '#111847',
+      'white': '#fafafa',
+      'ubd-yellow': '#f5c946',
+      'ubd-teal': '#59ddb5',
+      'ubd-blue': '#325494',
+      'ubd-red': '#e16d5e',
+      'ubd-dark-blue': '#011529',
+      'ubd-black': '#242424'
 
     },
     fontFamily: {
-      sans: ["Helvetica Neue", 'sans-serif'],
+      sans: ["pt_sansregular"],
       mono: ['monospace', 'serif'],
+      raleway: ['Raleway', 'sans-serif'] 
     },
     borderRadius: {
       'none': '0',

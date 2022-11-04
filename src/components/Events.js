@@ -7,7 +7,7 @@ const Events = () => {
     return(
         <>
             <div className="text-center mx-auto max-w-lg shadow-lg">
-                <h1 className="bg-dark-gray rounded-t-lg text-white">Events:</h1>
+                <h1 className="bg-ubd-black rounded-t-lg text-white">Events:</h1>
                 <Swiper pagination={true} modules={[Pagination]} className="mySwiper max-h-lg max-w-lg rounded-b-lg">
                     <SwiperSlide>
                         <div className='w-full grid justify-items-center'>

@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 const App = () => {
   return (
     <>
-    <div className="bg-cyan space-y-8 tracking-wide">
+    <div className="bg-gradient-to-r from-ubd-teal to-ubd-blue space-y-8 tracking-wide font-raleway">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

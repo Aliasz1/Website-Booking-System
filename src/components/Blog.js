@@ -1,8 +1,8 @@
 const Blog = () => {
     return(
         <>
-            <div className='grid grid-cols-3 gap-5 px-5 font-sans'>
-                <div className='rounded shadow-lg p-5 bg-white divide-y divide-blue'>
+            <div className='grid grid-cols-3 gap-5 px-5'>
+                <div className='rounded-large shadow-lg p-5 bg-white divide-y'>
                     <div>
                         <p className='pb-5 font-bold'>Forum here</p>
                         <hr className='pb-5'/>
@@ -15,7 +15,7 @@ const Blog = () => {
                         </p>
                     </div>
                 </div>
-                <div className='flex flex-col space-y-5 col-span-2 shadow-lg rounded p-5 bg-white'>
+                <div className='flex flex-col space-y-5 col-span-2 shadow-lg rounded-large p-5 bg-white'>
                     <div>
                         <p className='pb-5 font-bold'>Blog title here</p>
                         <hr className='pb-5'/>
