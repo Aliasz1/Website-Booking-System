@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -43,7 +42,6 @@ module.exports = {
       'ubd-black': '#242424',
     },
     fontFamily: {
-      sans: ["pt_sansregular"],
       mono: ['monospace', 'serif'],
       raleway: ['Raleway', 'sans-serif'] 
     },
