@@ -40,8 +40,7 @@ module.exports = {
       'ubd-blue': '#325494',
       'ubd-red': '#e16d5e',
       'ubd-dark-blue': '#011529',
-      'ubd-black': '#242424'
-
+      'ubd-black': '#242424',
     },
     fontFamily: {
       sans: ["pt_sansregular"],

@@ -1,11 +1,11 @@
-import Profile from "../components/Profile";
 import Counselor from "../components/Counselor";
+import Service from "../components/Service";
 
 const About = () => {
     return(
       <>
         <Counselor />
-        <Profile />
+        <Service />
       </>
     )
   };

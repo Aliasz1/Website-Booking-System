@@ -2,6 +2,9 @@ const Counselor = () => {
     return(
         <>
             <div className="mx-10 p-5 flex flex-col space-y-5">
+                <div className="text-center text-4xl">
+                    <h3>About our counselors</h3>
+                </div>
                 <div className="bg-white shadow-lg rounded-large p-5">
                     <h1 className="font-bold">Counselor 1</h1><br />
                     <p>

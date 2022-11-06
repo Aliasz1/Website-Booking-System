@@ -8,7 +8,7 @@ const Calendar = () => {
                         height="600" 
                         frameborder="0" 
                         scrolling="no"
-                        className="shadow-lg rounded"
+                        className="shadow-lg rounded bg-calendar"
                 /> 
             </div>
         </>

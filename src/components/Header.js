@@ -11,6 +11,7 @@ const Header = () => {
                     <li><Link to="/" className='hover:underline underline-offset-8'>Home</Link></li>
                     <li><Link to="/About" className='hover:underline underline-offset-8'>About</Link></li>
                     <li><Link to="/Contact" className='hover:underline underline-offset-8'>Contact</Link></li>
+                    <li><Link to="/Dashboard" className='hover:underline underline-offset-8'>Dashboard</Link></li>
                     <li>|</li>
                     <li><Link to="/Login" className='hover:underline underline-offset-8 font-bold'>Login</Link></li>
                 </ul>

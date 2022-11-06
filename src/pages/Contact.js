@@ -1,6 +1,6 @@
-import BookForm from "../components/BookForm";
 import ContactForm from "../components/ContactForm";
 import Calendar from "../components/Calendar";
+import Faq from "../components/Faq";
 
 const Contact = () => {
     return(
@@ -8,11 +8,12 @@ const Contact = () => {
             <div>
                 <Calendar />
             </div>
-            <div className="grid grid-cols-2">
+            <div>
                 <ContactForm />
-                <BookForm />
             </div>
-
+            <div>
+                <Faq />
+            </div>
         </>
     )
   };
