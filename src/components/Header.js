@@ -1,6 +1,25 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../contexts/user';
 
 const Header = () => {
+
+    const { logOutUser } = useContext(UserContext);
+ 
+    // This function is called when the user clicks the "Logout" button.
+    const logOut = async () => {
+      try {
+        // Calling the logOutUser function from the user context.
+        const loggedOut = await logOutUser();
+        // Now we will refresh the page, and the user will be logged out and
+        // redirected to the login page because of the <PrivateRoute /> component.
+        if (loggedOut) {
+          window.location.reload(true);
+        }
+      } catch (error) {
+        alert(error)
+      }
+    }
 
     return(
         <>
@@ -14,9 +33,11 @@ const Header = () => {
                     <li><Link to="/Dashboard" className='hover:underline underline-offset-8'>Dashboard</Link></li>
                     <li>|</li>
                     <li><Link to="/Login" className='hover:underline underline-offset-8 font-bold'>Login</Link></li>
+                    <li><Link to="/Signup" className='hover:underline underline-offset-8 font-bold'>Signup</Link></li>
                 </ul>
             </nav>
         </div>
+        <button onClick={logOut}>Logout</button>
         </>
     )
 
