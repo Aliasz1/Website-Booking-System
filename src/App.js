@@ -13,9 +13,11 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 
+//Index file
 const App = () => {
 
   return (
+    //Create Routing across the App
     <>
     <div className="bg-gradient-to-r from-ubd-teal to-ubd-blue space-y-8 tracking-wide font-raleway">
       <BrowserRouter>

@@ -6,9 +6,6 @@ const Contact = () => {
     return(
         <>
             <div>
-                <Calendar />
-            </div>
-            <div>
                 <ContactForm />
             </div>
             <div>
