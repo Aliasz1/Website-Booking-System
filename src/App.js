@@ -3,7 +3,6 @@ import { UserProvider } from "./contexts/user";
 import PrivateRoute from "./pages/Private";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -29,7 +28,9 @@ const App = () => {
               <Route path="Contact" element={<Contact />} />
               <Route path="Login" element={<Login />} />
               <Route path="Signup" element={<Signup />} />
-              <Route element={<PrivateRoute />}><Route exact path="Dashboard" element={<Dashboard />} /></Route>
+              {/* <Route element={<PrivateRoute />}> */}
+                <Route path="Dashboard" element={<Dashboard />} />
+              {/*</Route>*/}
               <Route path="*" element={<NoPage />} />
             </Route>
           </Routes>
