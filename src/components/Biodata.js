@@ -1,11 +1,25 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
 
-
-
 export default function Biodata() {
+
+  //This is the checkbox for both permanent address and contact address
+  const [isPermanentChecked, setIsPermanentChecked] = useState(false);
+  const [isOtherChecked, setIsOtherChecked] = useState(false);
+
+  function handlePermanentCheckboxChange(event) {
+    setIsPermanentChecked(event.target.checked);
+    setAddresstwo(livingAddress);
+  }
+
+  function handleOtherCheckboxChange(event) {
+    setIsOtherChecked(event.target.checked);
+    setContactAddress(livingAddress);
+  }
+
+  //Student's Detail 
   const[fullName, setName] = useState('');
   const[registrationNumber, setRegNo] = useState('');
   const[icNumber, setIc] = useState('');
@@ -31,6 +45,7 @@ export default function Biodata() {
   const[others, setOthers] = useState('');
   const[personalInterest, setPersonalInterest] = useState('');
 
+  //Emergency Details
   const[contactPerson, setContactPerson] = useState('');
   const[relationship, setRelationship] = useState('');
   const[phoneNumber, setPhoneNumber] = useState('');
@@ -40,6 +55,7 @@ export default function Biodata() {
   const[contactRace, setContactRace] = useState('');
   const[occupation, setOccupation] = useState('');
 
+  //Sends data to Google Sheet
   const onSubmit = () => {
     axios.post('https://sheet.best/api/sheets/91c63158-bf1d-4835-a713-e965251e231a',
     {fullName,
@@ -137,17 +153,29 @@ export default function Biodata() {
                     <textarea
                     style={{height: '20px'}}
                     placeholder="Client's Living Address" 
-                    onChange = {(e) => setAddress(e.target.value)}>
+                    id="living-address"
+                    value={livingAddress}
+                    onChange={event => setAddress(event.target.value)}>
                     </textarea>
                   </Form.Field>
                 </td>
                 <td colSpan={2}>
                   <Form.Field>
-                    <label>Permanent Address</label>
+                    <label>Permanent Address 
+                    <input
+                      type="checkbox"
+                      id="permanent-checkbox"
+                      checked={isPermanentChecked}
+                      onChange={handlePermanentCheckboxChange}
+                    /> Tick if same as Living Address
+                    </label>
                     <textarea
                     style={{height: '20px'}}
-                    placeholder="Client's Living Address" 
-                    onChange = {(e) => setAddresstwo(e.target.value)}>
+                    placeholder="Permanent Address" 
+                    id="permanent-address"
+                    value={permanentAddress}
+                    onChange={event => setAddresstwo(event.target.value)}
+                    disabled={isPermanentChecked}>
                     </textarea>
                   </Form.Field>
                 </td>
@@ -252,9 +280,10 @@ export default function Biodata() {
                   <Form.Field>
                     <select 
                     onChange = {(e) => setFamily(e.target.value)}>
+                      <option value="preferNotToSay">Prefer not to say</option>
                       <option value="never">Never</option>
                       <option value="seldom">Seldom</option>
-                      <option value="Occasionally">Occasionally</option>
+                      <option value="occasionally">Occasionally</option>
                       <option value="active">Active</option>
                     </select>
                   </Form.Field>
@@ -268,9 +297,10 @@ export default function Biodata() {
                   <Form.Field>
                     <select 
                     onChange = {(e) => setPeers(e.target.value)}>
+                      <option value="preferNotToSay">Prefer not to say</option>
                       <option value="never">Never</option>
                       <option value="seldom">Seldom</option>
-                      <option value="Occasionally">Occasionally</option>
+                      <option value="occasionally">Occasionally</option>
                       <option value="active">Active</option>
                     </select>
                   </Form.Field>
@@ -399,12 +429,24 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                     <label style={{textAlign: "center"}}>Full address</label>
+                    <br />
+                    <label>
+                    <input
+                      type="checkbox"
+                      id="other-checkbox"
+                      checked={isOtherChecked}
+                      onChange={handleOtherCheckboxChange}
+                    /> Tick if same as Living Address
+                    </label>
                   </Form.Field>
                 </td>
                 <td colSpan={3}>
                   <Form.Field>
                     <textarea style={{height: '20px'}}
-                    onChange = {(e) => setContactAddress(e.target.value)} />
+                    id="other-address"
+                    value={contactAddress}
+                    onChange={event => setContactAddress(event.target.value)}
+                    disabled={isOtherChecked} />
                   </Form.Field>
                 </td>
               </tr>

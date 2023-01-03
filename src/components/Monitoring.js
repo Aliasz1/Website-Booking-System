@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 import Table from 'react-bootstrap/Table';
 import * as React from 'react';
 
 
 export default function Monitor() {
+
   const[gender, setGender] = useState('');
   const[nationality, setNationality] = useState('');
   const[ageGroup, setAgeGroup] = useState('');
@@ -14,8 +15,30 @@ export default function Monitor() {
   const[year, setYear] = useState('');
   const[programme, setProgramme] = useState('');
   const[faculty, setFaculty] = useState('');
-  const[reason, setReason] = useState('');
+  const [selectedOptions, setSelectedOptions] = useState('');
   const[source, setSource] = useState('');
+
+  const maxOptions = 3;
+
+  async function handleChange(event) {
+    const options = [...selectedOptions];
+
+    if (event.target.checked) {
+      // Check if we have reached the maximum number of options
+      if (options.length >= maxOptions) {
+        // If we have, don't allow the checkbox to be checked
+        event.target.checked = false;
+        return;
+      }
+      // If we haven't, add the value to the list of selected options
+      options.push(event.target.value);
+    } else {
+      // If the checkbox is being unchecked, remove the value from the list of selected options
+      options.splice(options.indexOf(event.target.value), 1);
+    }
+
+    setSelectedOptions(options);
+  }
 
   const onSubmit = () => {
     axios.post('https://sheet.best/api/sheets/91c63158-bf1d-4835-a713-e965251e231a/tabs/monitoring',
@@ -27,10 +50,12 @@ export default function Monitor() {
     year,
     programme,
     faculty,
-    reason,
+    option1: selectedOptions[0], // send the first option to the "option1" cell
+    option2: selectedOptions[1], // send the second option to the "option2" cell,
+    option3: selectedOptions[2], // send the second option to the "option3" cell,
     source})
-
   }
+
   return (
     <div class='grid grid-cols-1 w-4/5 mx-auto bg-white shadow-xl py-10 px-10 rounded uppercase'>
         <Form>
@@ -38,7 +63,7 @@ export default function Monitor() {
           <Table bordered>
             <thead>
               <tr>
-                <th colSpan={4}>
+                <th colSpan={2}>
                 Monitoring
                 </th>
               </tr>
@@ -152,12 +177,143 @@ export default function Monitor() {
                   </Form.Field>
                 </td>
               </tr>
+            </tbody>
+          </Table>
+          <Table>
+            <tbody>
               <tr>
                 <td>
                   <Form.Field>
-                    <label>Reason</label>
-                    <input placeholder="reasons" 
-                    onChange = {(e) => setReason(e.target.value)} />
+                    <label>Reason</label>  
+                  </Form.Field>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <Form.Field>
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="academic"
+                        checked={selectedOptions.indexOf("academic") > -1}
+                        onChange={handleChange}
+                      />
+                      Academic
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="anxiety"
+                        checked={selectedOptions.indexOf("anxiety") > -1}
+                        onChange={handleChange}
+                      />
+                      Anxiety
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="stress"
+                        checked={selectedOptions.indexOf("stress") > -1}
+                        onChange={handleChange}
+                      />
+                      Stress
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="depression"
+                        checked={selectedOptions.indexOf("depression") > -1}
+                        onChange={handleChange}
+                      />
+                      Depression
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="relationship"
+                        checked={selectedOptions.indexOf("relationship") > -1}
+                        onChange={handleChange}
+                      />
+                      Relationship
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="bereavement"
+                        checked={selectedOptions.indexOf("bereavement") > -1}
+                        onChange={handleChange}
+                      />
+                      Bereavement
+                    </label>
+                  </Form.Field>
+                </td>
+                <td>
+                  <Form.Field>
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="abuse"
+                        checked={selectedOptions.indexOf("abuse") > -1}
+                        onChange={handleChange}
+                      />
+                      Abuse
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="financial"
+                        checked={selectedOptions.indexOf("financial") > -1}
+                        onChange={handleChange}
+                      />
+                      Financial
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="addiction"
+                        checked={selectedOptions.indexOf("addiction") > -1}
+                        onChange={handleChange}
+                      />
+                      Addiction
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="trauma"
+                        checked={selectedOptions.indexOf("trauma") > -1}
+                        onChange={handleChange}
+                      />
+                      Trauma
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="lowSelfEsteem"
+                        checked={selectedOptions.indexOf("lowSelfEsteem") > -1}
+                        onChange={handleChange}
+                      />
+                      Low Self Esteem
+                    </label>
+                    <br />
+                    <label>
+                      <input
+                        type="checkbox"
+                        value="other"
+                        checked={selectedOptions.indexOf("other") > -1}
+                        onChange={handleChange}
+                      />
+                      Other
+                    </label>
                   </Form.Field>
                 </td>
               </tr>
