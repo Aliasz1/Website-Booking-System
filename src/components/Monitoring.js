@@ -86,6 +86,7 @@ export default function Monitor() {
                         <select 
                         onChange = {(e) => setGender(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         </select>
@@ -97,6 +98,7 @@ export default function Monitor() {
                         <select 
                         onChange = {(e) => setAgeGroup(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="15-19">15-19</option>
                         <option value="20-24">20-24</option>
                         <option value="25-29">25-29</option>
@@ -114,6 +116,7 @@ export default function Monitor() {
                     <select 
                     onChange = {(e) => setNationality(e.target.value)}
                     required>
+                    <option value="" disabled selected>Please select</option>
                     <option value="bruneian">Bruneian</option>
                     <option value="international">International</option>
                     </select>
@@ -125,6 +128,7 @@ export default function Monitor() {
                     <select 
                     onChange = {(e) => setReligion(e.target.value)}
                     required>
+                    <option value="" disabled selected>Please select</option>
                     <option value="islam">Islam</option>
                     <option value="buddhist">Buddhist</option>
                     <option value="christianity">Christianity</option>
@@ -141,6 +145,7 @@ export default function Monitor() {
                     <select 
                     onChange = {(e) => setEducation(e.target.value)}
                     required>
+                    <option value="" disabled selected>Please select</option>
                     <option value="unibridge">Unibridge</option>
                     <option value="undergraduate">Undergraduate</option>
                     <option value="postgraduate">Postgraduate (MSc,MA)</option>
@@ -154,6 +159,7 @@ export default function Monitor() {
                     <select 
                     onChange = {(e) => setYear(e.target.value)}
                     required>
+                    <option value="" disabled selected>Please select</option>
                     <option value="year1">Year 1</option>
                     <option value="year2">Year 2</option>
                     <option value="year3">Year 3</option>
@@ -180,6 +186,7 @@ export default function Monitor() {
                     <select 
                     onChange = {(e) => setFaculty(e.target.value)}
                     required>
+                    <option value="" disabled selected>Please select</option>
                     <option value="shbie">Sultan Hassanal Bolkiah Institute of Education (SHBIE)</option>
                     <option value="ubdsbe">School of Business and Economics (UBDSBE)</option>
                     <option value="fos">Faculty of Science (FOS)</option>
@@ -342,6 +349,7 @@ export default function Monitor() {
                     <label>Source of Referral</label>
                     <select 
                     onChange = {(e) => setSource(e.target.value)}>
+                    <option value="" disabled selected>Please select</option>
                     <option value="faculty">Faculty</option>
                     <option value="relativeorfriend">Relative/Friend</option>
                     <option value="self">Self</option>

@@ -360,6 +360,7 @@ export default function Biodata() {
                     <select 
                     onChange = {(e) => setFamily(e.target.value)}
                     required>
+                      <option value="" disabled selected>Please select</option>
                       <option value="preferNotToSay">Prefer not to say</option>
                       <option value="never">Never</option>
                       <option value="seldom">Seldom</option>
@@ -378,6 +379,7 @@ export default function Biodata() {
                     <select 
                     onChange = {(e) => setPeers(e.target.value)}
                     required>
+                      <option value="" disabled selected>Please select</option>
                       <option value="preferNotToSay">Prefer not to say</option>
                       <option value="never">Never</option>
                       <option value="seldom">Seldom</option>

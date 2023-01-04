@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
 
 export default function Risk() {
@@ -59,6 +59,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ1(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -72,6 +73,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ2(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -94,6 +96,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ4(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -107,6 +110,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ5(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -120,6 +124,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ6(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -133,6 +138,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ7(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -146,6 +152,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ8(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="good">Good</option>
                         <option value="fair">Fair</option>
                         <option value="poor">Poor</option>
@@ -169,6 +176,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ10(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="good">Good</option>
                         <option value="fair">Fair</option>
                         <option value="poor">Poor</option>
@@ -192,6 +200,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ12(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -205,6 +214,7 @@ export default function Risk() {
                         <select 
                         onChange = {(e) => setQ13(e.target.value)}
                         required>
+                        <option value="" disabled selected>Please select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
