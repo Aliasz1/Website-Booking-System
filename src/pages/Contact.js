@@ -1,5 +1,4 @@
 import ContactForm from "../components/ContactForm";
-import Calendar from "../components/Calendar";
 import Faq from "../components/Faq";
 import Biodata from "../components/Biodata";
 import Monitor from "../components/Monitoring";

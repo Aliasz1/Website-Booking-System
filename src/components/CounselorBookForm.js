@@ -1,8 +1,8 @@
-const BookForm = () => {
+const CounselorBookForm = () => {
     return(
         <>
         <div class='grid grid-cols-1 w-1/3 mx-auto bg-white text-center shadow-xl py-10 px-10 rounded uppercase'>
-            <h1 class='pb-10 text-xl'>Booking Form</h1>
+            <h1 class='pb-10 text-xl'>Counselor Booking Form</h1>
             <form class='place-self-center'>
             <div class='grid grid-cols-2 gap-5 text-left'>
                 <label for="Bdate">Date:</label>
@@ -16,4 +16,4 @@ const BookForm = () => {
     )
 }
 
-export default BookForm;
+export default CounselorBookForm;

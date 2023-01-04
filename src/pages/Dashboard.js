@@ -1,8 +1,7 @@
 import React from "react";
 
 import Profile from '../components/Profile';
-import BookForm from "../components/BookForm";
-import Calendar from "../components/Calendar";
+import BookingPageBody from "./bodies/BookingPageBody";
 
 const Dashboard = () => {
     return(
@@ -10,9 +9,11 @@ const Dashboard = () => {
             <div>
                 <Profile />
             </div>
+
+            {/* When new layout is implemented, it is sufficient to move BookingPageBody where it is desired. */}
+            
             <div>
-                <Calendar />
-                <BookForm />
+                <BookingPageBody />
             </div>
         </>
     )
