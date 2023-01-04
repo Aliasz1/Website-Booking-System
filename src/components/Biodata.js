@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import Table from 'react-bootstrap/Table';
+import DatePicker from 'react-date-picker';
 
 export default function Biodata() {
 
@@ -53,6 +54,11 @@ export default function Biodata() {
     if (!cgpaRegex.test(value)) {
       e.preventDefault();
     }
+  }
+
+  //Date of Birth function
+  const handleDateChange = (date) => {
+    setDob(date);
   }
 
   //This is the checkbox for both permanent address and contact address
@@ -280,9 +286,12 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                     <label>Date of Birth</label>
-                    <input placeholder="Date of Birth" 
-                    onChange = {(e) => setDob(e.target.value)} 
-                    required/>
+                    <DatePicker
+                      onChange={handleDateChange}
+                      value={dob}
+                      required
+                      format="dd/MM/yy"
+                    />
                   </Form.Field>
                 </td>
                 <td>
