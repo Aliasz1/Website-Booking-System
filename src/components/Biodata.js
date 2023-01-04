@@ -5,6 +5,56 @@ import Table from 'react-bootstrap/Table';
 
 export default function Biodata() {
 
+  //Only allow numbers to pass through
+  const numbersRegex = /^\d+$/;
+
+  const handleNumbersKeyPress = (e) => {
+    const value = e.target.value + e.key;
+    if (!numbersRegex.test(value)) {
+      e.preventDefault();
+    }
+  }
+
+  //Only allow letters to pass through
+  const lettersRegex = /^[a-zA-Z]+$/;
+
+  const handleLettersKeyPress = (e) => {
+    const value = e.target.value + e.key;
+    if (!lettersRegex.test(value)) {
+      e.preventDefault();
+    }
+  }
+
+  //Only allow text and " @"
+  const nameRegex = /^[a-zA-Z @]+$/;
+
+  const handleNameKeyPress = (e) => {
+    const value = e.target.value + e.key;
+    if (!nameRegex.test(value)) {
+      e.preventDefault();
+    }
+  }
+
+  //Only allows numbers and letters to go through
+  const numLetRegex = /^[a-zA-Z0-9]+$/;
+
+  const handleNumLetKeyPress = (e) => {
+    const value = e.target.value + e.key;
+    if (!numLetRegex.test(value)) {
+      e.preventDefault();
+    }
+  }
+
+  //Only allow numbers and "." to go through
+  const cgpaRegex = /^[0-9.]+$/;
+
+  const handleCgpaKeyPress = (e) => {
+    const value = e.target.value + e.key;
+    if (!cgpaRegex.test(value)) {
+      e.preventDefault();
+    }
+  }
+
   //This is the checkbox for both permanent address and contact address
   const [isPermanentChecked, setIsPermanentChecked] = useState(false);
   const [isOtherChecked, setIsOtherChecked] = useState(false);
@@ -129,20 +179,26 @@ export default function Biodata() {
                     <textarea 
                     style={{height: '20px'}}
                     placeholder='Full Name' 
-                    onChange = {(e) => setName(e.target.value)}>
+                    onChange = {(e) => setName(e.target.value)}
+                    onKeyPress={handleNameKeyPress}
+                    required>
                     </textarea>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>IC No.</label>
-                    <input placeholder='00-123456' 
-                    onChange = {(e) => setIc(e.target.value)} />
+                    <input placeholder='00123456' 
+                    onChange = {(e) => setIc(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                   <Form.Field>  
                     <label>Registration Number</label>               
                     <input placeholder='22B1234' 
-                    onChange = {(e) => setRegNo(e.target.value)} />
+                    onChange = {(e) => setRegNo(e.target.value)} 
+                    onKeyPress={handleNumLetKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -155,7 +211,8 @@ export default function Biodata() {
                     placeholder="Client's Living Address" 
                     id="living-address"
                     value={livingAddress}
-                    onChange={event => setAddress(event.target.value)}>
+                    onChange={event => setAddress(event.target.value)}
+                    required>
                     </textarea>
                   </Form.Field>
                 </td>
@@ -175,7 +232,8 @@ export default function Biodata() {
                     id="permanent-address"
                     value={permanentAddress}
                     onChange={event => setAddresstwo(event.target.value)}
-                    disabled={isPermanentChecked}>
+                    disabled={isPermanentChecked}
+                    required>
                     </textarea>
                   </Form.Field>
                 </td>
@@ -185,28 +243,36 @@ export default function Biodata() {
                   <Form.Field>
                     <label>Faculty</label>
                     <input placeholder="FOS/SBE/IHS" 
-                    onChange = {(e) => setFaculty(e.target.value)} />
+                    onChange = {(e) => setFaculty(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Program/Course</label>
                     <input placeholder="Mathematics" 
-                    onChange = {(e) => setCourse(e.target.value)} />
+                    onChange = {(e) => setCourse(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Year</label>
-                    <input placeholder="3rd Year" 
-                    onChange = {(e) => setYear(e.target.value)} />
+                    <input placeholder="Third" 
+                    onChange = {(e) => setYear(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Current CGPA</label>
                     <input placeholder="2.15" 
-                    onChange = {(e) => setCgpa(e.target.value)} />
+                    onChange = {(e) => setCgpa(e.target.value)} 
+                    onKeyPress={handleCgpaKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -215,28 +281,35 @@ export default function Biodata() {
                   <Form.Field>
                     <label>Date of Birth</label>
                     <input placeholder="Date of Birth" 
-                    onChange = {(e) => setDob(e.target.value)} />
+                    onChange = {(e) => setDob(e.target.value)} 
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Religion</label>
                     <input placeholder="Muslim" 
-                    onChange = {(e) => setReligion(e.target.value)} />
+                    onChange = {(e) => setReligion(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Country</label>
                     <input placeholder="Brunei" 
-                    onChange = {(e) => setCountry(e.target.value)} />
+                    onChange = {(e) => setCountry(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Race</label>
                     <input placeholder="Malay" 
-                    onChange = {(e) => setRace(e.target.value)} />
+                    onChange = {(e) => setRace(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -245,21 +318,27 @@ export default function Biodata() {
                   <Form.Field>
                     <label>No of Siblings</label>
                     <input placeholder="3" 
-                    onChange = {(e) => setSiblings(e.target.value)} />
+                    onChange = {(e) => setSiblings(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Birth Order</label>
                     <input placeholder="Birth Order" 
-                    onChange = {(e) => setBirthOrder(e.target.value)} />
+                    onChange = {(e) => setBirthOrder(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Mobile Phone Number</label>
                     <input placeholder="+673 7123456" 
-                    onChange = {(e) => setMobileNumber(e.target.value)} />
+                    onChange = {(e) => setMobileNumber(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -279,7 +358,8 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                     <select 
-                    onChange = {(e) => setFamily(e.target.value)}>
+                    onChange = {(e) => setFamily(e.target.value)}
+                    required>
                       <option value="preferNotToSay">Prefer not to say</option>
                       <option value="never">Never</option>
                       <option value="seldom">Seldom</option>
@@ -296,7 +376,8 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                     <select 
-                    onChange = {(e) => setPeers(e.target.value)}>
+                    onChange = {(e) => setPeers(e.target.value)}
+                    required>
                       <option value="preferNotToSay">Prefer not to say</option>
                       <option value="never">Never</option>
                       <option value="seldom">Seldom</option>
@@ -322,7 +403,9 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                       <input placeholder="hours/day" 
-                    onChange = {(e) => setSocialMedia(e.target.value)} />
+                    onChange = {(e) => setSocialMedia(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
@@ -333,7 +416,9 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                       <input placeholder="hours/day" 
-                    onChange = {(e) => setYoutube(e.target.value)} />
+                    onChange = {(e) => setYoutube(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -346,7 +431,9 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                       <input placeholder="hours/day" 
-                    onChange = {(e) => setGaming(e.target.value)} />
+                    onChange = {(e) => setGaming(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
@@ -357,7 +444,9 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                       <input placeholder="hours/day" 
-                    onChange = {(e) => setBrowsing(e.target.value)} />
+                    onChange = {(e) => setBrowsing(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -376,7 +465,9 @@ export default function Biodata() {
                 <td>
                   <Form.Field>
                       <input placeholder="hours/day" 
-                    onChange = {(e) => setOthers(e.target.value)} />
+                    onChange = {(e) => setOthers(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -389,7 +480,8 @@ export default function Biodata() {
                 <td colSpan={3}>
                   <Form.Field>
                     <textarea placeholder="Please briefly describe yourself to help us to help you with some information beneficial such as your hobby, your future plan and any information about you" 
-                    onChange = {(e) => setPersonalInterest(e.target.value)} />
+                    onChange = {(e) => setPersonalInterest(e.target.value)} 
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -408,7 +500,9 @@ export default function Biodata() {
                     <textarea 
                     style={{height: '20px'}}
                     placeholder='Full Name' 
-                    onChange = {(e) => setContactPerson(e.target.value)}>
+                    onChange = {(e) => setContactPerson(e.target.value)}
+                    onKeyPress={handleNameKeyPress}
+                    required>
                     </textarea>
                   </Form.Field>
                 </td>
@@ -416,12 +510,16 @@ export default function Biodata() {
                   <Form.Field>
                     <label>Relationship</label>
                     <input placeholder='Mother' 
-                    onChange = {(e) => setRelationship(e.target.value)} />
+                    onChange = {(e) => setRelationship(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                   <Form.Field>  
                     <label>Mobile Phone Number</label>               
                     <input placeholder='+673 7123456' 
-                    onChange = {(e) => setPhoneNumber(e.target.value)} />
+                    onChange = {(e) => setPhoneNumber(e.target.value)} 
+                    onKeyPress={handleNumbersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -446,7 +544,8 @@ export default function Biodata() {
                     id="other-address"
                     value={contactAddress}
                     onChange={event => setContactAddress(event.target.value)}
-                    disabled={isOtherChecked} />
+                    disabled={isOtherChecked} 
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -455,28 +554,36 @@ export default function Biodata() {
                   <Form.Field>
                     <label>Religion</label>
                     <input placeholder="Muslim" 
-                    onChange = {(e) => setContactReligion(e.target.value)} />
+                    onChange = {(e) => setContactReligion(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Country</label>
                     <input placeholder="Brunei" 
-                    onChange = {(e) => setContactCountry(e.target.value)} />
+                    onChange = {(e) => setContactCountry(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Race</label>
                     <input placeholder="Malay" 
-                    onChange = {(e) => setContactRace(e.target.value)} />
+                    onChange = {(e) => setContactRace(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
                 <td>
                   <Form.Field>
                     <label>Occupation</label>
                     <input placeholder="Teacher" 
-                    onChange = {(e) => setOccupation(e.target.value)} />
+                    onChange = {(e) => setOccupation(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>

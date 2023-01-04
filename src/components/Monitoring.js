@@ -7,6 +7,16 @@ import * as React from 'react';
 
 export default function Monitor() {
 
+  //Only allow letters to pass through
+  const lettersRegex = /^[a-zA-Z]+$/;
+
+  const handleLettersKeyPress = (e) => {
+    const value = e.target.value + e.key;
+    if (!lettersRegex.test(value)) {
+      e.preventDefault();
+    }
+  }
+
   const[gender, setGender] = useState('');
   const[nationality, setNationality] = useState('');
   const[ageGroup, setAgeGroup] = useState('');
@@ -74,7 +84,8 @@ export default function Monitor() {
                     <Form.Field>
                         <label>Gender</label>
                         <select 
-                        onChange = {(e) => setGender(e.target.value)}>
+                        onChange = {(e) => setGender(e.target.value)}
+                        required>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         </select>
@@ -84,7 +95,8 @@ export default function Monitor() {
                     <Form.Field>
                         <label>Age Group</label>
                         <select 
-                        onChange = {(e) => setAgeGroup(e.target.value)}>
+                        onChange = {(e) => setAgeGroup(e.target.value)}
+                        required>
                         <option value="15-19">15-19</option>
                         <option value="20-24">20-24</option>
                         <option value="25-29">25-29</option>
@@ -100,7 +112,8 @@ export default function Monitor() {
                   <Form.Field>  
                     <label>Nationality</label>               
                     <select 
-                    onChange = {(e) => setNationality(e.target.value)}>
+                    onChange = {(e) => setNationality(e.target.value)}
+                    required>
                     <option value="bruneian">Bruneian</option>
                     <option value="international">International</option>
                     </select>
@@ -110,7 +123,8 @@ export default function Monitor() {
                   <Form.Field>
                     <label>Religion</label>
                     <select 
-                    onChange = {(e) => setReligion(e.target.value)}>
+                    onChange = {(e) => setReligion(e.target.value)}
+                    required>
                     <option value="islam">Islam</option>
                     <option value="buddhist">Buddhist</option>
                     <option value="christianity">Christianity</option>
@@ -125,7 +139,8 @@ export default function Monitor() {
                   <Form.Field>
                     <label>Education</label>
                     <select 
-                    onChange = {(e) => setEducation(e.target.value)}>
+                    onChange = {(e) => setEducation(e.target.value)}
+                    required>
                     <option value="unibridge">Unibridge</option>
                     <option value="undergraduate">Undergraduate</option>
                     <option value="postgraduate">Postgraduate (MSc,MA)</option>
@@ -137,7 +152,8 @@ export default function Monitor() {
                   <Form.Field>
                     <label>Year</label>
                     <select 
-                    onChange = {(e) => setYear(e.target.value)}>
+                    onChange = {(e) => setYear(e.target.value)}
+                    required>
                     <option value="year1">Year 1</option>
                     <option value="year2">Year 2</option>
                     <option value="year3">Year 3</option>
@@ -151,7 +167,9 @@ export default function Monitor() {
                   <Form.Field>
                     <label>Programme</label>
                     <input placeholder="Programme" 
-                    onChange = {(e) => setProgramme(e.target.value)} />
+                    onChange = {(e) => setProgramme(e.target.value)} 
+                    onKeyPress={handleLettersKeyPress}
+                    required/>
                   </Form.Field>
                 </td>
               </tr>
@@ -160,7 +178,8 @@ export default function Monitor() {
                   <Form.Field>
                     <label>Faculty</label>
                     <select 
-                    onChange = {(e) => setFaculty(e.target.value)}>
+                    onChange = {(e) => setFaculty(e.target.value)}
+                    required>
                     <option value="shbie">Sultan Hassanal Bolkiah Institute of Education (SHBIE)</option>
                     <option value="ubdsbe">School of Business and Economics (UBDSBE)</option>
                     <option value="fos">Faculty of Science (FOS)</option>

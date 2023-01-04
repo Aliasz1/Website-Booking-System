@@ -57,7 +57,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Have you ever been in counselling or therapy before?</label>
                         <select 
-                        onChange = {(e) => setQ1(e.target.value)}>
+                        onChange = {(e) => setQ1(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -69,7 +70,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Are you taking any prescribed medication?</label>
                         <select 
-                        onChange = {(e) => setQ2(e.target.value)}>
+                        onChange = {(e) => setQ2(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -90,7 +92,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Do you have support of family and friends?</label>
                         <select 
-                        onChange = {(e) => setQ4(e.target.value)}>
+                        onChange = {(e) => setQ4(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -102,7 +105,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Are you currently experiencing overwhelming sadness, grief or depression?</label>
                         <select 
-                        onChange = {(e) => setQ5(e.target.value)}>
+                        onChange = {(e) => setQ5(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -114,7 +118,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Have you ever self-harmed or harmed others?</label>
                         <select 
-                        onChange = {(e) => setQ6(e.target.value)}>
+                        onChange = {(e) => setQ6(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -126,7 +131,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Have you ever attempted suicide or seriously considered doing so?</label>
                         <select 
-                        onChange = {(e) => setQ7(e.target.value)}>
+                        onChange = {(e) => setQ7(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -138,7 +144,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>How would you rate your sleeping habits?</label>
                         <select 
-                        onChange = {(e) => setQ8(e.target.value)}>
+                        onChange = {(e) => setQ8(e.target.value)}
+                        required>
                         <option value="good">Good</option>
                         <option value="fair">Fair</option>
                         <option value="poor">Poor</option>
@@ -160,7 +167,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>How would you rate your eating patterns?</label>
                         <select 
-                        onChange = {(e) => setQ10(e.target.value)}>
+                        onChange = {(e) => setQ10(e.target.value)}
+                        required>
                         <option value="good">Good</option>
                         <option value="fair">Fair</option>
                         <option value="poor">Poor</option>
@@ -182,7 +190,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Do you have concerns about managing anger?</label>
                         <select 
-                        onChange = {(e) => setQ12(e.target.value)}>
+                        onChange = {(e) => setQ12(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -194,7 +203,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Are you currently experiencing anxiety, panic attacks or have any phobias?</label>
                         <select 
-                        onChange = {(e) => setQ13(e.target.value)}>
+                        onChange = {(e) => setQ13(e.target.value)}
+                        required>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                         </select>
@@ -215,7 +225,8 @@ export default function Risk() {
                     <Form.Field>
                         <label>Is there anything else you would like to disclose that might affect the counselling?</label>
                         <textarea style={{height: '20px'}}
-                        onChange = {(e) => setQ15(e.target.value)} />
+                        onChange = {(e) => setQ15(e.target.value)} 
+                        required/>
                     </Form.Field>
                 </td>
               </tr>
